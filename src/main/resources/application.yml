@@ -11,7 +11,7 @@ spring:
 
   # Подключение к БД
   datasource:
-    url: jdbc:postgresql://localhost:5432/FirstStore
+    url: jdbc:postgresql://localhost:8080/FirstStore
     username: postgres
     password: root
 
