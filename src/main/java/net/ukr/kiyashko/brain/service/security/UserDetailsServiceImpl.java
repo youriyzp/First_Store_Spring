@@ -15,7 +15,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Service
-public class UserDetailsServiceImpl implements UserDetailsService{
+public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired
     private UserRepository userRepository;
@@ -25,11 +25,12 @@ public class UserDetailsServiceImpl implements UserDetailsService{
     @Transactional(readOnly = true)
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userRepository.findByEmail(username);
-        if(user == null) {
+        if (user == null) {
             throw new UsernameNotFoundException(username); // бросаем ошибку, если юзер не найден
         }
         // тут будут реальные роли пользователей (ADMIN, USER), ока без них
         Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
+
 
         // Возвращаем объект внутреннего spring user
         return new org.springframework.security.core.userdetails.User(user.getEmail(),

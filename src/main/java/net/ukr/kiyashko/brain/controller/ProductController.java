@@ -1,4 +1,5 @@
 package net.ukr.kiyashko.brain.controller;
+
 import net.ukr.kiyashko.brain.dao.ProductRepository;
 import net.ukr.kiyashko.brain.model.Order;
 import net.ukr.kiyashko.brain.service.UserService;
@@ -11,7 +12,7 @@ import java.util.Date;
 import java.util.List;
 
 @RestController // Помечаем класс как контроллер обрабатывающий REST запросы
-@RequestMapping("/api")
+@RequestMapping("/api/product")
 public class ProductController {
 
     // Иньектируем сервис для работы с пользователями
@@ -20,7 +21,7 @@ public class ProductController {
 
     // Обработчик для запроса GET http://{host:port}/list
     @GetMapping(value = "/list")
-    public ResponseEntity<List<Order>>  AllProductRepository() {
+    public ResponseEntity<List<Order>> AllProductRepository() {
 
         return (ResponseEntity<List<Order>>) productRepository.findAll();
     }

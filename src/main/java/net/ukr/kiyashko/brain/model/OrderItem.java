@@ -4,12 +4,11 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name = "orderItem")
-
+//todo в базе нельзя большими буквами и слова разделять через дефис, указывать схему
+@Table(name = "order_item",schema = "store")
 public class OrderItem {
 
     @Id
-
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", length = 6, nullable = false)
     private Long id;
@@ -24,19 +23,9 @@ public class OrderItem {
     private int count;
 
     //@ManyToOne(fetch = FetchType.LAZY, optional = false)
-  //  @JoinColumn(name = "product_id", name = "order_id", nullable = false)
-  //  @JsonIgnore
-  //  private OrderItem orderItem;
-
-    public OrderItem(Long id, Long order_id, Long product_id, int count) {
-        this.id = id;
-        this.order_id = order_id;
-        this.product_id = product_id;
-        this.count = count;
-    }
-
-    public OrderItem() {
-    }
+    //  @JoinColumn(name = "product_id", name = "order_id", nullable = false)
+    //  @JsonIgnore
+    //  private OrderItem orderItem;
 
     public Long getId() {
         return id;

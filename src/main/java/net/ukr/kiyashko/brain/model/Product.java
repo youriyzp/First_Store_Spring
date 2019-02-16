@@ -7,12 +7,10 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "product")
-
+@Table(name = "product",schema = "store")
 public class Product {
 
     @Id
-
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", length = 6, nullable = false)
     private Long id;
@@ -27,11 +25,12 @@ public class Product {
     @Enumerated(EnumType.STRING)
     private UnitEnum unit;
 
-    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set<OrderItem> orderItem;
+ //   @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+ //   private Set<OrderItem> orderItem;
 
-
+/*
     private Set<Order> orderSet = new HashSet<>();
+
     @ManyToMany
     @JoinTable(name = "orderItem",
             //foreign key for CarsEntity in employee_car table
@@ -41,19 +40,20 @@ public class Product {
     public Set<Order> getOrderSet() {
         return orderSet;
     }
-
+*
     public void setOrderSet(Set<Order> orderSet) {
         this.orderSet = orderSet;
     }
-
+*/
     public Product(Long id, String name_product, double price, UnitEnum unit) {
         this.id = id;
         this.name_product = name_product;
         this.price = price;
         this.unit = unit;
     }
-    public Product(){
-            }
+
+    public Product() {
+    }
 
     public Long getId() {
         return id;

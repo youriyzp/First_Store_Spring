@@ -11,7 +11,7 @@ spring:
 
   # Подключение к БД
   datasource:
-    url: jdbc:postgresql://localhost:8080/FirstStore
+    url: jdbc:postgresql://localhost:5432/FirstStore
     username: postgres
     password: root
 
@@ -24,7 +24,7 @@ spring:
     # Стратегия инициализации БД
     # update - обновление колонок таблиц при загрузке (но не удаление)
     # create-drop - пересоздание таблиц призапуске приложения
-    hibernate.ddl-auto: update
+    hibernate.ddl-auto: create
     # Показывать вополняемые sql запросы в логе
     show-sql: true
     # Игнорирование LOB ошибки при старте

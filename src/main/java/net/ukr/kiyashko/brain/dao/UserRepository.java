@@ -38,4 +38,10 @@ public interface UserRepository extends CrudRepository<User, Long> {
      */
     @Query("select u from User u where u.creationDate between :startDate and :endDate")
     Stream<User> findUsersByPeriod(@Param("startDate") Date startDate, @Param("endDate") Date endDate);
+
+    //List <User> findByTelephon(int telephon);
+
+    User findByTelephon (int telephon );
+
+
 }

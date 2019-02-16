@@ -9,7 +9,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "order")
+@Table(name = "order",schema = "store")
 
 public class Order {
     //private Long id;
@@ -39,14 +39,14 @@ public class Order {
 
     @Column(name = "last_order")
     private Date last_order;
-    //указать тип данных к дате
+    //указать summm=OrderItem.count*Product.price
     @Column(name = "summ")
     private double summ;
-    //код для многих к одному  Person
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-      @JoinColumn(name = "person_id", nullable = false)
-      @JsonIgnore
-      private Person person;
+    //код для многих к одному  User
+   /* @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "users", nullable = false)
+    @JsonIgnore
+    private User user;
 
     private Set<Product> products = new HashSet<>();
 
@@ -57,13 +57,15 @@ public class Order {
     public Set<Product> getProducts() {
         return products;
     }
-        public void setProducts(Set<Product> products) {
-           this.products=products;
-        }
-          public void addProduct(Product product) {
+
+    public void setProducts(Set<Product> products) {
+        this.products = products;
+    }
+
+    public void addProduct(Product product) {
         products.add(product);
-          }
-   
+    }*/
+
     public Long getId() {
         return id;
     }

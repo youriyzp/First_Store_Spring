@@ -5,7 +5,6 @@ import net.ukr.kiyashko.brain.controller.validation.UserValidator;
 import net.ukr.kiyashko.brain.model.User;
 import net.ukr.kiyashko.brain.service.UserService;
 import net.ukr.kiyashko.brain.service.security.SecurityService;
-import net.ukr.kiyashko.brain.controller.form.UserForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -31,6 +30,30 @@ public class AuthController {
         model.addAttribute("userForm", new UserForm());
 
         return "registration";
+    }
+
+    @GetMapping({"/registration_admin"})
+    public String registrationAdmin(Model model) {
+        model.addAttribute("userFormAdmin", new UserForm());
+
+        return "registrationAdmin";
+    }
+
+    @PostMapping(value = "/registration_admin")
+    public String registrationAdmin(@ModelAttribute("userFormAdnin") UserForm userFormAdmin, BindingResult bindingResult, Model model) {
+        userValidator.validate(userFormAdmin, bindingResult);
+
+        if (bindingResult.hasErrors()) {
+            return "registrationAdmin";
+        }
+        User newUser = new User();
+        newUser.setEmail(userFormAdmin.getEmail());
+        PasswordEncoder encoder = new BCryptPasswordEncoder();
+        userFormAdmin.setPassword(encoder.encode(userFormAdmin.getPassword()));
+        userService.save(newUser);
+
+        securityService.autoLogin(userFormAdmin.getEmail(), userFormAdmin.getPassword());
+        return "redirect:/index";
     }
 
     @PostMapping(value = "/registration")

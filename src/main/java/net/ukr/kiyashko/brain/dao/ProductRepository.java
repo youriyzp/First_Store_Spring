@@ -20,20 +20,6 @@ public interface ProductRepository extends CrudRepository<Product, Long> {
      */
     @Override
     List<Product> findAll();
-
-    /**
-     * Метод для поиска пользователя по email
-     * Это так называемый "волшебный метод", т к называется по шаблону.
-     * Для него будет автоматически создан запрос: select u from User u where email = ?
-     */
-    Product findByEmail(String email);
-
-    /**
-     * Метод для поиска пользователей созданных за период времени.
-     * Для него описан HQL запрос в @Query
-     */
-    @Query("select u from User u where u.creationDate between :startDate and :endDate")
-    Stream<Product> findUsersByPeriod(@Param("startDate") Date startDate, @Param("endDate") Date endDate);
 }
 
 

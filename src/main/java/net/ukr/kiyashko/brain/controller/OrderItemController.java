@@ -12,7 +12,7 @@ import java.util.Date;
 import java.util.List;
 
 @RestController // Помечаем класс как контроллер обрабатывающий REST запросы
-@RequestMapping("/api")
+@RequestMapping("/api/order/item")
 public class OrderItemController {
 
     // Иньектируем сервис для работы с пользователями
@@ -21,11 +21,10 @@ public class OrderItemController {
 
     // Обработчик для запроса GET http://{host:port}/list
     @GetMapping(value = "/list")
-    public ResponseEntity<List<Order>>  AllOrderItemRepository() {
+    public ResponseEntity<List<Order>> AllOrderItemRepository() {
 
         return (ResponseEntity<List<Order>>) orderItemRepository.findAll();
     }
-
 
 
 }

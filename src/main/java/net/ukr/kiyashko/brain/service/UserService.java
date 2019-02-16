@@ -20,5 +20,11 @@ public interface UserService {
     List<User> findByPeriod(Date startDate, Date endDate);
 
     User save(User user);
+
+    User findByTelephon(int telephon);
+
+
+
+
 }
 
