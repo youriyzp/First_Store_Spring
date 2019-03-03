@@ -27,25 +27,8 @@ public class Product  implements Serializable {
     private UnitEnum unit;
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set<Order> order;
+    private Set<OrderItem> orderItems;
 
-/*
-    private Set<Order> orderSet = new HashSet<>();
-
-    @ManyToMany
-    @JoinTable(name = "orderItem",
-            //foreign key for CarsEntity in employee_car table
-            joinColumns = @JoinColumn(name = "product_id"),
-            //foreign key for other side - EmployeeEntity in employee_car table
-            inverseJoinColumns = @JoinColumn(name = "order_id"))
-    public Set<Order> getOrderSet() {
-        return orderSet;
-    }
-*
-    public void setOrderSet(Set<Order> orderSet) {
-        this.orderSet = orderSet;
-    }
-*/
     public Product(Long id, String name_product, double price, UnitEnum unit) {
         this.id = id;
         this.name_product = name_product;
