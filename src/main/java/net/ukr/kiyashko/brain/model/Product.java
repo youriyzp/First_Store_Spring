@@ -5,6 +5,7 @@ import net.ukr.kiyashko.brain.model.enums.UnitEnum;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 @Entity
@@ -70,6 +71,12 @@ public class Product  implements Serializable {
     public UnitEnum getUnit() {
         return unit;
     }
+
+  // Map<id,price> mapPrice= new HashMap<id,price>();
+
+//    public void getMapPrice(){
+//        return Map<int id,double price> mapPrice= new HashMap<id,price>();
+//    }
 
 
 }

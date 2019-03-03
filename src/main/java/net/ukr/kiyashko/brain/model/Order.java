@@ -1,6 +1,7 @@
 package net.ukr.kiyashko.brain.model;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.*;
 
@@ -22,8 +23,8 @@ public class Order implements Serializable {
     private Date last_order;
 
     //указать summm=OrderItem.count*Product.price
-    @Column(name = "summ", insertable = false, updatable = false)
-    private double summ;//TODO Product.getPrice*OrderItem.getCount ???
+    @Column(name = "summ", insertable = false, updatable = false,nullable = false,  scale = 2)
+    private BigDecimal summ;//TODO Product.getPrice*OrderItem.getCount ???
 
     public Order() {
     }
@@ -34,11 +35,13 @@ public class Order implements Serializable {
         this.last_order = last_order;
 //        this.product = product;
 //        this.count = count;
-        this.summ = getSumm();
+        //this.summ = getSumm();
     }
     //Как получить вычисляемое поле summ?
-public void getSumm(Product.price,OrderItem.count){
-        return for (int Product.id:)Product.price*OrderItem.count};
+
+//    Map<id_product,price> mapPrice= new HashMap<id,price>();
+//public void getSumm(Product.price,OrderItem.count){
+//        return for (int Product.id:)Product.price*OrderItem.count};
 
     public Long getId() {
         return id;
@@ -68,9 +71,9 @@ public void getSumm(Product.price,OrderItem.count){
 //        return summ;
 //    }
 
-    public void setSumm(double summ) {
-        this.summ = summ;
-    }
+  //  public void setSumm(double summ) {
+//        this.summ = summ;
+//    }
 
 
 }

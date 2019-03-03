@@ -1,22 +1,22 @@
 package net.ukr.kiyashko.brain.service;
 
-import net.ukr.kiyashko.brain.model.Order;
+import net.ukr.kiyashko.brain.model.OrderItem;
 
 import java.util.Date;
 import java.util.List;
 
 public interface OrderItemService {
-    List<Order> findAll();
+    List<OrderItem> findAll();
 
-    List<Order> getList();
+    List<OrderItem> getList();
 
-    Order findByEmail(String email);
+    OrderItem findByEmail(String email);
 
-    List<Order> findByPeriod(Date startDate, Date endDate);
+    List<OrderItem> findByPeriod(Date startDate, Date endDate);
 
-    Order save(Order order);
+    OrderItem save(OrderItem orderItem);
 
-    Order findByTelephon(int telephon);
+    OrderItem findByTelephon(int telephon);
 
 
 

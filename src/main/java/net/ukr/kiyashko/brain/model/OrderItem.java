@@ -1,6 +1,8 @@
 package net.ukr.kiyashko.brain.model;
 
 import javax.persistence.*;
+import java.util.HashMap;
+import java.util.Map;
 
 
 @Entity
@@ -24,6 +26,7 @@ public class OrderItem {
 
     @Column(name = "count")
     private int count;
+  //  private Object HashMap;
 
     public OrderItem(){}
 
@@ -65,4 +68,8 @@ public class OrderItem {
     public void setCount(int count) {
         this.count = count;
     }
+
+//    public  void getMapCount(){
+//        return new HashMap<id,count>();
+//    }
 }

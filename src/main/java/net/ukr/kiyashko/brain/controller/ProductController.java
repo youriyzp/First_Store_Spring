@@ -37,24 +37,23 @@ public class ProductController {
         return "product";
     }
 
-    // 3.0803.03.19 TODO next
-    @GetMapping(value = {"/listproduct"})
-    public String personList(Model model) {
+        @GetMapping(value = {"/listProduct"})
+    public String listProduct(Model model) {
 
         model.addAttribute("product", productService.getList());
-        return "listproduct";
+        return "listProduct";
     }
 
-    @GetMapping(value = {"/addproduct"})
+    @GetMapping(value = {"/addProduct"})
     public String showAddPersonPage(Model model) {
 
         ProductForm productForm = new ProductForm();
         model.addAttribute("productForm", productForm);
-        return "addproduct";
+        return "addProduct";
     }
 
     //
-    @PostMapping(value = {"/addproduct"})
+    @PostMapping(value = {"/addProduct"})
     public String saveProduct(Model model, @ModelAttribute("productForm") ProductForm productForm) {
 
         String name_product = productForm.getName_product();
@@ -67,7 +66,7 @@ public class ProductController {
             newProduct.setPrice(price_product);
             productService.save(newProduct);
 
-            return "redirect:/listproduct";
+            return "redirect:/listProduct";
         }
         model.addAttribute("errorProductMessage", errorMessage);
         return "addProduct";

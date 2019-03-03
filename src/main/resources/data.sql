@@ -9,7 +9,7 @@ Insert into
 Values ( 'postsil',1.14,'piece');
 INSERT INTO store.users(
 	 address, created_at, email, password, password_hash, role, telephon, user_first_name, user_name)
-	VALUES ('zp',current_date   , 'ddd@ukr.net',default , default  ,'ADMIN', 0672512541, 'maskov', 'artur');
+	VALUES (default ,'zp',current_date   , 'ddd@ukr.net',default , default  ,'ADMIN', 0672512541, 'maskov', 'artur');
 INSERT INTO store.users(
 	 address, created_at, email, password, password_hash, role, telephon, user_first_name, user_name)
 	VALUES ( 'kiev',current_date , 'aaa@ukr.net',default , default  ,'CLIENT', 0672512542, 'vasyutin', 'vasya');

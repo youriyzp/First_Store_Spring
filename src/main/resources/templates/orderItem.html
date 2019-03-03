@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>OrderItem List</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<h1>Order List</h1>
+<a href="addListOrderItem">Add New Order</a>
+<br/><br/>
+<div>
+    <table border="1">
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Count</th>
+        </tr>
+        <tr th:each ="user : $orderItem}">
+            <td th:utext="${product.name}">...</td>
+            <td th:utext="${product.price}">...</td>
+            <td th:utext="${orderItem.count}">...</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
