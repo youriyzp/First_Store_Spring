@@ -3,12 +3,13 @@ package net.ukr.kiyashko.brain.model;
 import net.ukr.kiyashko.brain.model.enums.UnitEnum;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "product",schema = "store")
-public class Product {
+public class Product  implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,8 +26,8 @@ public class Product {
     @Enumerated(EnumType.STRING)
     private UnitEnum unit;
 
- //   @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
- //   private Set<OrderItem> orderItem;
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Set<Order> order;
 
 /*
     private Set<Order> orderSet = new HashSet<>();

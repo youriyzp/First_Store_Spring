@@ -1,6 +1,7 @@
 package net.ukr.kiyashko.brain.dao;
 
 import net.ukr.kiyashko.brain.model.Order;
+import net.ukr.kiyashko.brain.model.User;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -20,6 +21,9 @@ public interface OrderRepository extends CrudRepository<Order, Long> {
      */
     @Override
     List<Order> findAll();
+    @Query("select u from User u where u.creationDate between :startDate and :endDate")
+    Stream<User> findUsersByPeriod(@Param("startDate") Date startDate, @Param("endDate") Date endDate);
+
 
 }
 

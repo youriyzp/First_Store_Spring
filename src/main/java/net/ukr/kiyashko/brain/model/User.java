@@ -1,14 +1,17 @@
 package net.ukr.kiyashko.brain.model;
 
 import net.ukr.kiyashko.brain.model.enums.RoleEnum;
+import org.hibernate.mapping.Collection;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity // аннотация помечающая класс как персистентную сущность
 @Table(name = "users", schema = "Store") // укзание что данный класс соответствует таблице в БД
-public class User {
+public class User  implements Serializable {
 
     @Id // указание что это поле являеться ключем
     // Описание последовательности для генерации ID
@@ -47,8 +50,37 @@ public class User {
     @Enumerated(EnumType.STRING)
     private RoleEnum role;
 
-    /*@OneToMany(mappedBy = "users", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set<Order> order;*/
+
+//    @ManyToOne(optional = false, cascade = CascadeType.ALL)
+//    @JoinColumn(name = "Order_Id")
+//    private Order order_id;
+
+
+//    @OneToMany(mappedBy = "users", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    private Set<Order> order;
+//
+   // private Collection<Order> order = new HashSet<Order>();
+
+    @OneToMany(mappedBy = "users", cascade = CascadeType.ALL,fetch = FetchType.LAZY, orphanRemoval = true)
+    private Set<Order> order ;
+
+   //
+
+    public User(Long id, String email, String password, Date creationDate, String address, String user_name, String user_first_name, int telephon, String password_hash, RoleEnum role, Set<Order> order) {
+        this.id = id;
+        this.email = email;
+        this.password = password;
+        this.creationDate = creationDate;
+        this.address = address;
+        this.user_name = user_name;
+        this.user_first_name = user_first_name;
+        this.telephon = telephon;
+        this.password_hash = password_hash;
+        this.role = role;
+        this.order = order;
+    }
+
+    public User(){}
 
     public Long getId() {
         return id;

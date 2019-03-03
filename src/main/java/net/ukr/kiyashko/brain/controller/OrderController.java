@@ -21,7 +21,7 @@ public class OrderController {
     private OrderRepository orderRepository;
 
     // Обработчик для запроса GET http://{host:port}/list
-    @GetMapping(value = "/list")
+    @GetMapping(value = "/order")
     public ResponseEntity<?> AllOrderRepository() {
 
         return new ResponseEntity<>(orderRepository.findAll(), HttpStatus.OK);

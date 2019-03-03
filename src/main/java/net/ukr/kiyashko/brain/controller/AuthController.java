@@ -32,29 +32,29 @@ public class AuthController {
         return "registration";
     }
 
-    @GetMapping({"/registration_admin"})
-    public String registrationAdmin(Model model) {
-        model.addAttribute("userFormAdmin", new UserForm());
-
-        return "registrationAdmin";
-    }
-
-    @PostMapping(value = "/registration_admin")
-    public String registrationAdmin(@ModelAttribute("userFormAdnin") UserForm userFormAdmin, BindingResult bindingResult, Model model) {
-        userValidator.validate(userFormAdmin, bindingResult);
-
-        if (bindingResult.hasErrors()) {
-            return "registrationAdmin";
-        }
-        User newUser = new User();
-        newUser.setEmail(userFormAdmin.getEmail());
+//    @GetMapping({"/registration_admin"})
+//    public String registrationAdmin(Model model) {
+//        model.addAttribute("userFormAdmin", new UserForm());
+//
+//        return "registrationAdmin";
+//    }
+//
+//    @PostMapping(value = "/registration_admin")
+//    public String registrationAdmin(@ModelAttribute("userFormAdnin") UserForm userFormAdmin, BindingResult bindingResult, Model model) {
+//        userValidator.validate(userFormAdmin, bindingResult);
+//
+//        if (bindingResult.hasErrors()) {
+//            return "registrationAdmin";
+//        }
+        //User newUser = new User();
+        //newUser.setEmail(userFormAdmin.getEmail());
         PasswordEncoder encoder = new BCryptPasswordEncoder();
-        userFormAdmin.setPassword(encoder.encode(userFormAdmin.getPassword()));
-        userService.save(newUser);
-
-        securityService.autoLogin(userFormAdmin.getEmail(), userFormAdmin.getPassword());
-        return "redirect:/index";
-    }
+       // userFormAdmin.setPassword(encoder.encode(userFormAdmin.getPassword()));
+//        userService.save(newUser);
+//
+//        securityService.autoLogin(userFormAdmin.getEmail(), userFormAdmin.getPassword());
+//        return "redirect:/index";
+//    }
 
     @PostMapping(value = "/registration")
     public String registration(@ModelAttribute("userForm") UserForm userForm, BindingResult bindingResult, Model model) {

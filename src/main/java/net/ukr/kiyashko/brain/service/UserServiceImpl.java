@@ -15,6 +15,10 @@ public class UserServiceImpl implements UserService {
     @Autowired // Иньектируем репозиторий в этот класс (Dependency Injection)
             UserRepository userRepository;
 
+
+@Override
+   public List<User> findAll(){return  userRepository.findAll();}
+
     @Override
     public List<User> getList() {
         return userRepository.findAll();

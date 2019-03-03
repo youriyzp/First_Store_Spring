@@ -1,28 +1,28 @@
 package net.ukr.kiyashko.brain.dao;
 
 
-import net.ukr.kiyashko.brain.model.OrderItem;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.query.Param;
-import org.springframework.stereotype.Repository;
+//import net.ukr.kiyashko.brain.model.OrderItem;
+//import org.springframework.data.jpa.repository.JpaRepository;
+//import org.springframework.data.jpa.repository.Query;
+//import org.springframework.data.repository.CrudRepository;
+//import org.springframework.data.repository.query.Param;
+//import org.springframework.stereotype.Repository;
+//
+//import java.util.Date;
+//import java.util.List;
+//import java.util.stream.Stream;
 
-import java.util.Date;
-import java.util.List;
-import java.util.stream.Stream;
 
-
-@Repository // Помечаем класс как репозиторий
-public interface OrderItemRepository extends CrudRepository<OrderItem, Long> {
-
-    /**
-     * Переопределение метода из родительского интерфейса,
-     * для возможности возвращать List.
-     */
-    @Override
-    List<OrderItem> findAll();
-
-}
-
+//@Repository // Помечаем класс как репозиторий
+//public interface OrderItemRepository extends CrudRepository<OrderItem, Long> {
+//
+//    /**
+//     * Переопределение метода из родительского интерфейса,
+//     * для возможности возвращать List.
+//     */
+//    @Override
+//    List<OrderItem> findAll();
+//
+//}
+//
 
