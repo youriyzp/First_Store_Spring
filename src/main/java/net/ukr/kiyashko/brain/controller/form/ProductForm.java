@@ -2,6 +2,8 @@ package net.ukr.kiyashko.brain.controller.form;
 
 import net.ukr.kiyashko.brain.model.enums.UnitEnum;
 
+import java.util.Date;
+
 public class ProductForm {
 
     private Long id;
@@ -40,4 +42,5 @@ public class ProductForm {
     public void setUnit(UnitEnum unit) {
         this.unit = unit;
     }
+
 }

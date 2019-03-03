@@ -38,7 +38,7 @@ public class Order implements Serializable {
     }
     //Как получить вычисляемое поле summ?
 public void getSumm(Product.price,OrderItem.count){
-        return Product.price*OrderItem.count};
+        return for (int Product.id:)Product.price*OrderItem.count};
 
     public Long getId() {
         return id;
