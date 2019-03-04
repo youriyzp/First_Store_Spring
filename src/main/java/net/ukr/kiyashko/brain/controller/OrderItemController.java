@@ -26,7 +26,7 @@ public class OrderItemController {
     @Value("${orderItemMessage.message}")
     private String message;
 
-    @Value("${errororderItemMessage.message}")
+    @Value("$errorOrderItemMessage.message}")
     private String errorMessage;
 
     @RequestMapping(value = {"OrderItem"}, method = RequestMethod.GET)
@@ -41,15 +41,15 @@ public class OrderItemController {
 
         return (ResponseEntity<List<Order>>) orderItemService.findAll();
     }
-    @GetMapping(value = {"/listOrderItem"})
-    public String listOrderItem(Model model) {
-
-        model.addAttribute("orderItem",  orderItemService.getList());
-        return "listOrderItem";
-    }
+//    @GetMapping(value = {"/listOrderItem"})
+//    public String listOrderItem(Model model) {
+//
+//        model.addAttribute("orderItem",  orderItemService.getList());
+//        return "listOrderItem";
+//    }
 
     @GetMapping(value = {"/addListOrderItem"})
-    public String showAddPersonPage(Model model) {
+    public String showddListOrderItemPage(Model model) {
 
         OrderItemForm orderItemForm = new OrderItemForm();
         model.addAttribute("orderItemForm", orderItemForm);

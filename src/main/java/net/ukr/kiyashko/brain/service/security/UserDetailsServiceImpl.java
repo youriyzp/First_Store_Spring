@@ -31,7 +31,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         // тут будут реальные роли пользователей (ADMIN, USER), ока без них
         Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
 
-
         // Возвращаем объект внутреннего spring user
         return new org.springframework.security.core.userdetails.User(user.getEmail(),
                 user.getPassword(), grantedAuthorities);

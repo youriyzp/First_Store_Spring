@@ -2,7 +2,9 @@ package net.ukr.kiyashko.brain.model;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.*;
 
 @Entity
@@ -25,6 +27,8 @@ public class Order implements Serializable {
     //указать summm=OrderItem.count*Product.price
     @Column(name = "summ", insertable = false, updatable = false,nullable = false,  scale = 2)
     private BigDecimal summ;//TODO Product.getPrice*OrderItem.getCount ???
+
+   // List<OrderItem> orderItemList= new ArrayList<>();
 
     public Order() {
     }

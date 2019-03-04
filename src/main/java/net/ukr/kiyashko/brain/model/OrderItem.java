@@ -1,8 +1,7 @@
 package net.ukr.kiyashko.brain.model;
 
 import javax.persistence.*;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 
 @Entity
@@ -28,7 +27,7 @@ public class OrderItem {
     private int count;
   //  private Object HashMap;
 
-    public OrderItem(){}
+        public OrderItem(){}
 
     public OrderItem(Long id, Order order, Product product, int count) {
         this.id = id;

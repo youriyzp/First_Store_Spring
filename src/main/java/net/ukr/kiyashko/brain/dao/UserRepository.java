@@ -30,7 +30,7 @@ public interface UserRepository extends CrudRepository<User, Long> {
      * Это так называемый "волшебный метод", т к называется по шаблону.
      * Для него будет автоматически создан запрос: select u from User u where email = ?
      */
-    User findByEmail(String email);
+   User findByEmail(String email);
 
     /**
      * Метод для поиска пользователей созданных за период времени.
@@ -44,4 +44,7 @@ public interface UserRepository extends CrudRepository<User, Long> {
     User findByTelephon (int telephon );
 
 
+//    User save();
+//
+//    User delete();
 }

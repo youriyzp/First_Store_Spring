@@ -27,9 +27,9 @@ public class UserController {
 
     // Обработчик для запроса на сохранение пользователя POST http://{host:port}/user
     @PostMapping(value = "/user")
-    public ResponseEntity<?> saveUser(@RequestBody User data) {
+    public ResponseEntity<?> saveUser( @RequestBody User data) {
 
-        if (data.getCreationDate() == null) {
+        if(data.getCreationDate() == null) {
             data.setCreationDate(new Date());
         }
 
@@ -38,5 +38,3 @@ public class UserController {
     }
 
 }
-
-

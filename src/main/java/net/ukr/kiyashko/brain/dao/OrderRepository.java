@@ -21,6 +21,18 @@ public interface OrderRepository extends CrudRepository<Order, Long> {
      */
     @Override
     List<Order> findAll();
+    //List<Order> getList();
+
+  //  Order findByEmail(String email);
+
+    //List<Order> findByPeriod(Date startDate, Date endDate);
+
+    Order save(Order order);
+
+   // Order findByTelephon(int telephon);
+   // void delete(long id);
+//    Order editOrder(Order order);
+//    Order addOrder(Order order);
     @Query("select u from User u where u.creationDate between :startDate and :endDate")
     Stream<User> findUsersByPeriod(@Param("startDate") Date startDate, @Param("endDate") Date endDate);
 

@@ -14,12 +14,23 @@ import java.util.stream.Stream;
 @Repository // Помечаем класс как репозиторий
 public interface ProductRepository extends CrudRepository<Product, Long> {
 
+
+
     /**
      * Переопределение метода из родительского интерфейса,
      * для возможности возвращать List.
      */
     @Override
     List<Product> findAll();
+
+    List<Product> getList();
+
+  //  List<Product> findByPeriod(Date startDate, Date endDate);
+
+    Product save(Product product);
+    //void delete(long id);
+//    Product editProduct(Product product);
+//    Product addProduct(Product product);
 }
 
 

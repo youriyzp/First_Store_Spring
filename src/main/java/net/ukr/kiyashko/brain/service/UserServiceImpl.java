@@ -34,15 +34,27 @@ public class UserServiceImpl implements UserService {
         return userRepository.findUsersByPeriod(startDate, endDate).collect(Collectors.toList());
     }
 
+
+
     @Override
     public User save(User user) {
         return userRepository.save(user);
     }
 
     @Override
+    public User editUser(User user) {
+        return userRepository.save(user);
+    }
+
+//    @Override
+//    public User delete(long id) {return userRepository.delete();
+//
+//    }
+
+    @Override
     public User findByTelephon(int telephon) {
         return userRepository.findByTelephon(telephon);
     }
-
+//
 }
 
