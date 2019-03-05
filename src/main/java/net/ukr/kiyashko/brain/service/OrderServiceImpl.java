@@ -19,45 +19,45 @@ public class OrderServiceImpl implements OrderService {
         return orderRepository.findAll();
     }
 
-//    @Override
-//    public List<Order> getList() {
-//        return orderRepository.getList();
-//    }
+    @Override
+    public List<Order> getList() {
+        return orderRepository.getList();
+    }
 
-//    @Override
-//    public Order findByEmail(String email) {
-//        return orderRepository.findByEmail(email);
-//    }
+    @Override
+    public Order findByEmail(String email) {
+        return orderRepository.findByEmail(email);
+    }
 
-//    @Override
-//    public List<Order> findByPeriod(Date startDate, Date endDate) {
-//        return orderRepository.findByPeriod(startDate,endDate);
-//    }
+    @Override
+    public List<Order> findByPeriod(Date startDate, Date endDate) {
+        return orderRepository.findByPeriod(startDate,endDate);
+    }
 
     @Override
     public Order save(Order order) {
         return orderRepository.save(order);
     }
 
-//    @Override
-//    public Order findByTelephon(int telephon) {
-//        return orderRepository.findByTelephon(telephon);
-//    }
-//
-//    @Override
-//    public void delete(long id) { orderRepository.delete(id);
-//
-//    }
+    @Override
+    public Order findByTelephon(int telephon) {
+        return orderRepository.findByTelephon(telephon);
+    }
 
-//    @Override
-//    public Order editOrder(Order order) {
-//        return orderRepository.editOrder(order);
-//    }
-//
-//    @Override
-//    public Order addOrder(Order order) {
-//        return orderRepository.addOrder(order);
-//    }
+    @Override
+    public void delete(long id) { orderRepository.delete(id);
+
+    }
+
+    @Override
+    public Order editOrder(Order order) {
+        return orderRepository.editOrder(order);
+    }
+
+    @Override
+    public Order addOrder(Order order) {
+        return orderRepository.addOrder(order);
+    }
 }
 
 

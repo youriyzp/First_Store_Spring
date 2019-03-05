@@ -55,12 +55,12 @@ public class Application extends SpringBootServletInitializer {
 //        // TODO создать несколько произвольных товаров - new Product
      //   List<String> tags= new ArrayList<>();
 //        tags.add("Igr");
-    Product enythink =new Product();
+//    Product enythink =new Product();
       Product strela = new Product((long) 1,"strela",1.26,piece);
     Product strelaLux = new Product((long) 1,"strela lux",1.32,piece);
      //   Product kukla = new Product(2,"kukla",150,new ArrayList<>());
 //        // TODO создать Заказ - new Purchase
-Order order1 = new Order();
+//Order order1 = new Order();
 //Order order2= new Order(order2.getId(),"1",order2.getLast_order() ,1,3,15);
 
 

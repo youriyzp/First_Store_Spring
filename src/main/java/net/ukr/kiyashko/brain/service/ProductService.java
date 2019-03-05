@@ -13,14 +13,14 @@ public interface ProductService {
     List<Product> getList();
 
 
-   // List<Product> findByPeriod(Date startDate, Date endDate);
+    List<Product> findByPeriod(Date startDate, Date endDate);
 
 
     Product save(Product product);
 
-    //void delete(long id);
-//    Product editProduct(Product product);
-//    Product addProduct(Product product);
+    void delete(long id);
+    Product editProduct(Product product);
+    Product addProduct(Product product);
 
 
 

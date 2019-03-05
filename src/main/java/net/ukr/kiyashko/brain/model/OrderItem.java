@@ -26,6 +26,8 @@ public class OrderItem {
     @Column(name = "count")
     private int count;
   //  private Object HashMap;
+ // List<OrderItem> orderItemList= new ArrayList<OrderItem>();
+
 
         public OrderItem(){}
 

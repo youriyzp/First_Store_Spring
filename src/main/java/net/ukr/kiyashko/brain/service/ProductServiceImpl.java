@@ -19,27 +19,27 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<Product> getList(){return productRepository.getList();}
 
-//    @Override
-//    public List<Product> findByPeriod(Date startDate, Date endDate) {
-//        return productRepository.findByPeriod(startDate, endDate);
-//    }
+    @Override
+    public List<Product> findByPeriod(Date startDate, Date endDate) {
+        return productRepository.findByPeriod(startDate, endDate);
+    }
 
     @Override
     public Product save(Product product){return productRepository.save( product);}
-//    @Override
-//    public void delete(long id){productRepository.delete( id);
-//
-//    }
-//    @Override
-//    public  Product editProduct(Product product){return productRepository.save(product);}
-//
-//    @Override
-//    public Product addProduct(Product product) {
-//        Product savedProduct =  productRepository.save( product);
-//
-//        return savedProduct;
-//
-//    }
+    @Override
+    public void delete(long id){productRepository.delete( id);
+
+    }
+    @Override
+    public  Product editProduct(Product product){return productRepository.save(product);}
+
+    @Override
+    public Product addProduct(Product product) {
+        Product savedProduct =  productRepository.save( product);
+
+        return savedProduct;
+
+    }
 
 }
 

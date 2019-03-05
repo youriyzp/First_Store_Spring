@@ -30,22 +30,22 @@ public class ProductController {
     @Value("${errorProduct.message}")
     private String errorMessage;
 
-    @RequestMapping(value = {"Product"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"product"}, method = RequestMethod.GET)
     public String product(Model model) {
 
         model.addAttribute("message", message);
         return "product";
     }
 
-        @GetMapping(value = {"/listProduct"})
+    @GetMapping(value = {"/listProduct"})
     public String listProduct(Model model) {
 
         model.addAttribute("product", productService.getList());
         return "listProduct";
     }
 
-    @GetMapping(value = {"/addProduct"})
-    public String showAddPersonPage(Model model) {
+    @GetMapping(value = {"/add"})
+    public String addProduct(Model model) {
 
         ProductForm productForm = new ProductForm();
         model.addAttribute("productForm", productForm);
@@ -53,7 +53,7 @@ public class ProductController {
     }
 
     //
-    @PostMapping(value = {"/addProduct"})
+    @PostMapping(value = {"/add"})
     public String saveProduct(Model model, @ModelAttribute("productForm") ProductForm productForm) {
 
         String name_product = productForm.getName_product();
@@ -64,6 +64,7 @@ public class ProductController {
             Product newProduct = new Product();
             newProduct.setName_product(name_product);
             newProduct.setPrice(price_product);
+            newProduct.setUnit(unitEnum);
             productService.save(newProduct);
 
             return "redirect:/listProduct";
@@ -72,14 +73,10 @@ public class ProductController {
         return "addProduct";
     }
 
-    // Иньектируем сервис для работы с пользователями
-    @Autowired
-    private ProductRepository productRepository;
 
-    // Обработчик для запроса GET http://{host:port}/list
-    @GetMapping(value = "/product")
-    public ResponseEntity<List<Order>> AllProductRepository() {
-
-        return (ResponseEntity<List<Order>>) productRepository.findAll();
-    }
+//    @GetMapping(value = "/product")
+//    public ResponseEntity<List<Product>> productService() {
+//
+//        return ResponseEntity List<Product> productService.findAll();
+//    }
 }

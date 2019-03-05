@@ -66,6 +66,8 @@ public class OrderItemController {
 //почему не работает проверка на пустое поле && count.isEmpty()
         if (count != 0 && count > 0 ) {
             OrderItem newOrderItem = new OrderItem();
+            newOrderItem.setId(id_orderItemForm);
+            newOrderItem.setProduct(name_product);
             newOrderItem.setCount(count);
 
 

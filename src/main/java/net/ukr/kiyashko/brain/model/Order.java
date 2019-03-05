@@ -26,9 +26,9 @@ public class Order implements Serializable {
 
     //указать summm=OrderItem.count*Product.price
     @Column(name = "summ", insertable = false, updatable = false,nullable = false,  scale = 2)
-    private BigDecimal summ;//TODO Product.getPrice*OrderItem.getCount ???
+    private double summ;//TODO Product.getPrice*OrderItem.getCount ???
 
-   // List<OrderItem> orderItemList= new ArrayList<>();
+ // List<Order> orderList= new ArrayList<Order>();
 
     public Order() {
     }
@@ -71,13 +71,13 @@ public class Order implements Serializable {
         this.last_order = last_order;
     }
 
-    //public double getSumm() {
-//        return summ;
-//    }
+    public double getSumm() {
+        return summ;
+    }
 
-  //  public void setSumm(double summ) {
-//        this.summ = summ;
-//    }
+    public void setSumm(double summ) {
+        this.summ = summ;
+    }
 
 
 }
